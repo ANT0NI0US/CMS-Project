@@ -3,6 +3,7 @@ DROP TABLE Volunteer cascade constraints;
 DROP TABLE Donor cascade constraints;
 DROP TABLE Activity cascade constraints;
 DROP TABLE Donates cascade constraints;
+DROP TABLE EMPOLYEE cascade constraints;
 
 CREATE TABLE Branch
 (BID number(3) primary key,
@@ -37,3 +38,14 @@ CREATE TABLE Donates
 "Date" DATE NOT NULL,
 "Time" DATE NOT NULL,
 "Amount" Number(10) NOT NULL);
+                                 
+CREATE TABLE EMPLOYEE
+("SSN" NUMBER(10,0) primary key, 
+"FNAME" VARCHAR2(10) NOT NULL, 
+"LNAME" VARCHAR2(10) NOT NULL, 
+"SEX" CHAR(1), 
+"EMAIL" VARCHAR2(20), 
+"MOBILE_NUMBER" NUMBER(12,0) NOT NULL, 
+"ADDRESS" VARCHAR2(50)
+"BID" NUMBER(3) references Branch(BID));                               
+                                  
